@@ -26,16 +26,24 @@ getSameCount([], []); // 0
 
 const getSameCount = (arr1, arr2) => {
   let result = 0;
-
-  for (let i = 0; i < arr1.length; i++) {
-    for (let j = 0; j < arr2.length; j++) {
-      if (arr1.includes(arr2[j])) {
+  let arrUn1 = _.uniq(arr1);
+  let arrUn2 = _.uniq(arr2);
+  console.log(arrUn1);
+  for (let i = 0; i < arrUn1.length; i++) {
+    for (let j = 0; j < arrUn2.length; j++) {
+      if (arrUn1[i] === arrUn2[j]) {
+        console.log(arrUn1);
+        console.log(arrUn2);
+        console.log(result);
         result += 1;
+      } else {
+        result += 0;
       }
     }
   }
-  console.log(typeof result);
   return result;
 };
 
-console.log(getSameCount([1, 3], [3])); // 3
+console.log(getSameCount([1, 2, 3], [2, 8, 10])); //1;
+console.log(getSameCount([1, 1, 1, 2, 3], [1, 1])); // 1
+console.log(getSameCount([1, 1, 2, 3], [2, 3])); //2
