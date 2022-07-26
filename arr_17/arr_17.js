@@ -28,16 +28,15 @@ const checkIsBalanced = (expression) => {
   // Проходим по каждому символу в строке
   for (const symbol of expression) {
     // Смотрим открывающий или закрывающий
-    if (symbol === '(' || '{' || '[' || '<') {
+    if (symbol === '{' ) {
       stack.push(symbol);
-    } else if (symbol === ')' || '}' || ']' || '>') {
+       } else if (symbol === '}') {
       // Если для закрывающего не нашлось открывающего, значит баланса нет
       if (!stack.pop()) {
-        return false;
+                return false;
       }
     }
   }
-
   return stack.length === 0;
 };
-console.log(checkIsBalanced('[()]'));
+console.log(checkIsBalanced('{}}'));
