@@ -18,17 +18,32 @@ isHappyNumber.js
 Длина строки str находится так: str.length
 */
 
-const isHappyNumber=(happyNumber)=>{
-  let happySquare =0
-  // console.log(happySquare);
-  // let happyStr = String(happySquare)
-  // console.log(happyStr);
-  // let result = 0
+// @ts-check
+const sumOfSquareDigits = (num) => {
+  const numAsStr = String(num);
+  let sum = 0;
+  for (let i = 0; i < numAsStr.length; i += 1) {
+    const digit = Number(numAsStr[i]);
+    sum += digit * digit;
+  }
 
-for (let i = 0; i < 10; i++) {
-happySquare = 
-}
+  return sum;
+};
 
-return happyStr
-}
+// BEGIN (write your solution here)
+const isHappyNumber = (num) => {
+  let temp = num;
+  for (let i = 0; i < 10; i++) {
+    const result = sumOfSquareDigits(temp);
+    if (result === 1) {
+      return true;
+    } else {
+      temp = result;
+    }
+  }
+  return false;
+};
+export default isHappyNumber;
+// END
+
 console.log(isHappyNumber(7));
