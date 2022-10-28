@@ -1,0 +1,17 @@
+// Реализуйте и экспортируйте по умолчанию функцию, 
+// которая принимает на вход имя сайта и возвращает информацию о нем:
+// import getDomainInfo from './domain.js';
+ 
+// // Если домен передан без указания протокола,
+// // то по умолчанию берется http
+// getDomainInfo('yandex.ru')
+// // {
+// //   scheme: 'http',
+// //   name: 'yandex.ru',
+// // }
+ 
+// getDomainInfo('https://hexlet.io');
+// // {
+// //   scheme: 'https',
+// //   name: 'hexlet.io',
+// // }
