@@ -21,12 +21,17 @@
 
 const data = {
   user: 'ubuntu',
+  user2:{
+    name:'Andy',
+    age:25,
+  },
   cores: 4,
   os: 'linux',
 };
+console.log(Object.hasOwn(data.user2, 'name'));
 const obj = (data, arr) => {
   if (arr.length === 0) {
-    return {}
+    return {};
   }
   let obj = {};
   const entries = Object.entries(data);
@@ -69,3 +74,14 @@ const findKeys = (obj, expectedValue) => {
 
 console.log(findKeys(lessonMembers, 10)); // ['foreach', 'operations']
 findKeys(lessonMembers, 3);
+
+let obj1 = {
+  name: 'Andy',
+  age: 26,
+};
+let entries = Object.entries(obj1);
+console.log(entries);
+let fromEntries = Object.fromEntries(entries);
+console.log(fromEntries);
+const { name: rog = 0, ...tale } = obj1;
+console.log(rog);
